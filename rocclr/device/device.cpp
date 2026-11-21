@@ -106,6 +106,12 @@ std::pair<const Isa*, const Isa*> Isa::supportedIsas() {
       //               |             |        |            |     LDS Size
       //               |             |        |            |      Mem Banks
       //               |             |        |            |       LDS Alignment
+      //
+      // === GCN1 (Southern Islands) - FirePro D700 support (Tahiti) ===
+      // No SRAMECC/XNACK features on GCN1. PAL (Windows) never supported SI.
+      {"gfx600", true, false, 6, 0, 0, NONE, NONE, 4, 16, 1, 256, 64 * Ki, 32, 512},
+      {"gfx601", true, false, 6, 0, 1, NONE, NONE, 4, 16, 1, 256, 64 * Ki, 32, 512},
+      {"gfx602", true, false, 6, 0, 2, NONE, NONE, 4, 16, 1, 256, 64 * Ki, 32, 512},
       {"gfx801", true, true, 8, 0, 1, NONE, ANY, 4, 16, 1, 256, 64 * Ki, 32, 512},
       {"gfx801:xnack-", true, false, 8, 0, 1, NONE, OFF, 4, 16, 1, 256, 64 * Ki, 32, 512},
       {"gfx801:xnack+", true, true, 8, 0, 1, NONE, ON, 4, 16, 1, 256, 64 * Ki, 32, 512},
